@@ -26,9 +26,12 @@ function Question({ item, assertion, dispatchScore, setNext, options }) {
       setTime(timeleft.time);
       if (timeleft.time === 0) {
         clearInterval(interval);
-        timeleft.time = 30;
       }
     }, mil);
+    return () => {
+      timeleft.time = 30;
+      clearInterval(interval);
+    };
   }, []);
 
   useEffect(() => {

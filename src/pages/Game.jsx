@@ -43,6 +43,7 @@ function Game({ getQuestions, tokenApi, questions, loginRedirect, getimer }) {
     }));
     return [optC, ...optE].sort(() => Math.random() - num);
   };
+
   return (
     <main className={ container }>
       {index > quatro && history.push('/feedback')}
